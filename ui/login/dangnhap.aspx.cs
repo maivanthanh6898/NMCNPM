@@ -48,7 +48,7 @@ namespace main.ui.login
                         Session["email"] = rd["email"];
                         Session["type"] = "success";
                         Session["mess"] = "Đăng nhập thành công!";
-                        Response.Redirect("dangnhap.aspx");
+                        Response.Redirect("../manage/listorder.aspx");
                     }
                     else
                     {

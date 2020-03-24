@@ -16,24 +16,23 @@ namespace main.ui.manage
 
         public static SqlConnection connectDatabase()
         {
-            //SqlConnection myCnn = new SqlConnection(strCon);
-            //myCnn.Open();
-            //return myCnn;
-            return null;
+            SqlConnection myCnn = new SqlConnection(strCon);
+            myCnn.Open();
+            return myCnn;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Page.IsPostBack)
-            //{
-            //    SqlConnection con = connectDatabase();
-            //    SqlCommand cmd = new SqlCommand("select po.id,po.soban,po.ngay,nv.ten as nhan_vien,kh.name as khach_hang,po.ten_mon,po.so_luong from tbl_phieu_order as po INNER JOIN tbl_nhan_vien as nv ON po.id_nhan_vien = nv.id INNER JOIN tbl_khach_hang as kh ON po.id_khach_hang = kh.id; ", con);
-            //    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //    DataTable dt = new DataTable();
-            //    sda.Fill(dt);
-            //    rpt_order.DataSource = dt;
-            //    rpt_order.DataBind();
-            //}
+            if (!Page.IsPostBack)
+            {
+                SqlConnection con = connectDatabase();
+                SqlCommand cmd = new SqlCommand("select po.id,po.soban,po.ngay,nv.ten as nhan_vien,kh.name as khach_hang,po.ten_mon,po.so_luong from tbl_phieu_order as po INNER JOIN tbl_nhan_vien as nv ON po.id_nhan_vien = nv.id INNER JOIN tbl_khach_hang as kh ON po.id_khach_hang = kh.id; ", con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                rpt_order.DataSource = dt;
+                rpt_order.DataBind();
+            }
         }
     }
 }
