@@ -89,3 +89,18 @@ CREATE TABLE  tbl_chi_tiet_nhap (
 	PRIMARY KEY(id)
 );
 COMMIT;
+
+
+create proc check_password
+@email nvarchar(50),
+@mkcu nvarchar(50)
+as begin
+select * from tblUser where @email=tblUser.Username and @mkcu=Password
+end
+
+create proc update_pass
+@email nvarchar(50),
+@mkmoi nvarchar(50)
+as begin
+update tblUser set tblUser.Password=@mkmoi where @email=tblUser.Username
+end
