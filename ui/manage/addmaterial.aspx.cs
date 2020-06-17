@@ -36,7 +36,7 @@ namespace main.ui.manage
                     {
                         SqlCommand cmd = new SqlCommand("get_nguyenlieu_theoid", myCnn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id", ma);
+                        cmd.Parameters.AddWithValue("@ma", ma);
                         SqlDataReader rd = cmd.ExecuteReader();
                         if (rd.HasRows)
                         {
