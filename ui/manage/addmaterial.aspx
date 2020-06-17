@@ -45,7 +45,7 @@
                 </div>
                 <!-- /Navbar Barnd -->
                 <!-- Sidebar Collapse -->
-                <div class="sidebar-collapse" id="sidebar-collapse">
+                <div class="sidebar-collapse" id="sidebar-collapse" style="margin-left:70px">
                     <i class="collapse-icon fa fa-bars"></i>
                 </div>
                 <!-- /Sidebar Collapse -->
